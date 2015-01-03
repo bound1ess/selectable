@@ -7,7 +7,13 @@ def get_bash_shebang_line
 end
 
 def ask_for_file_path
-    # TODO
+    print "Where would you like to save selectable.sh? [#{__dir__}]: "
+    input = STDIN.gets.chomp.strip
+    if input.length == 0
+        input = __dir__
+    end
+    puts "Saving in #{input}", $/
+    input
 end
 
 def ask_about_options
