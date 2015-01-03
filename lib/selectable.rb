@@ -6,11 +6,15 @@ def get_bash_shebang_line
     "#!/usr/bin/env bash" + $/
 end
 
+def get_sh_template name
+    File.read(get_pieces_folder_path() + "/#{name}.sh")
+end
+
 def ask_for_file_path
-    print "Where would you like to save selectable.sh? [#{__dir__}]: "
+    print "Where would you like to save selectable.sh? [#{__dir__}/..]: "
     path = STDIN.gets.chomp.strip
     if path.length == 0
-        path = __dir__
+        path = __dir__ + "/.."
     end
     puts "Saving in #{path}", $/
     path
@@ -51,5 +55,28 @@ def ask_about_choice_processing
 end
 
 def build_selectable file_path, options, choice_processing
-    # TODO
+    content = get_bash_shebang_line()
+
+    if options[:type] == "predefined"
+        list = options[:list].map { |option| "\"#{option}\"" }.join(" ")
+        content += get_sh_template("predefined-options") % [list]
+    else
+        content += get_sh_template("options-stored-in-file") % [options[:path]]
+    end
+
+    content += get_sh_template("variables")
+    content += get_sh_template("display-menu")
+    content += get_sh_template("update-current-index")
+
+    if choice_processing[:type] == "show"
+        content += get_sh_template("show-users-choice")
+    else
+        content += get_sh_template("store-users-choice") % [choice_processing[:variable_name]]
+    end
+
+    content += get_sh_template("main-loop")
+
+    File.open(file_path, "w") do |file|
+        file.write content
+    end 
 end
