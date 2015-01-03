@@ -26,24 +26,26 @@ def ask_about_options
             options.push option
             puts "Added #{option} to the list."
         end
+        puts ("The predefined options are [%s]." % [options.join(", ")]), $/
         return {:type => "predefined", :list => options}
     else
         print "Please enter the path where the options are stored: "
         path = STDIN.gets.chomp.strip
-        print $/
+        puts "Loading from #{path}", $/
         return {:type => "stored", :path => path}
     end
 end
 
 def ask_about_choice_processing
-    print "Would you like to display the user's choice OR store it in a variable? [1st/2nd]: "
+    print "Would you like to display user's choice OR store it in a variable? [1st/2nd]: "
     choice = STDIN.gets.chomp.strip[0]
     if choice == "1"
+        puts "You opted to display the user's choice.", $/
         return {:type => "show"}
     else
         print "Please enter the variable name: "
         name = STDIN.gets.chomp.strip.upcase
-        print $/
+        puts "The user's choice will be stored in #{name}.", $/
         return {:type => "store", :variable_name => name}
     end
 end
