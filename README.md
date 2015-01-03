@@ -2,6 +2,10 @@
 
 It's like HTML's select tag, but for Bash scripts.
 
+![](http://i.imgur.com/QuTooOd.png)
+
+*Just to give you an idea of what it is like.*
+
 ## Installation
 
 Just run these commands in your terminal:
