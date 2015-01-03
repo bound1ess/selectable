@@ -8,6 +8,6 @@ sh_file_path = ask_for_file_path()
 
 build_selectable(sh_file_path, ask_about_options(), ask_about_choice_processing())
 
-puts "Selectable is built and ready to go! Take a look #{sh_file_path}."
+puts "Selectable is built and ready to go! Take a look: #{sh_file_path}."
 
 # vim: syntax=ruby
