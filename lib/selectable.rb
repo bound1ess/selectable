@@ -7,7 +7,7 @@ def get_bash_shebang_line
 end
 
 def get_sh_template name
-    File.read(get_pieces_folder_path() + "/#{name}.sh")
+    $/ + File.read(get_pieces_folder_path() + "/#{name}.sh")
 end
 
 def ask_for_file_path
