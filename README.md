@@ -4,10 +4,10 @@ It's like HTML's select tag, but for Bash scripts.
 
 ## Installation
 
-Just run these commands in your terminal.
+Just run these commands in your terminal:
 
 ```shell
-git clone https://github.com/bound1ess/selectable && cd selectable
+git clone https://github.com/bound1ess/selectable.git && cd selectable
 ./build-selectable
 ```
 
@@ -33,7 +33,7 @@ Instructions on how to integrate Selectable in your project can be found when ru
 
 ## Examples
 
-Check out this `examples` [folder](#) for examples of usage.
+Check out this `examples` [folder](https://github.com/bound1ess/selectable/tree/master/pieces) for examples of usage.
 
 ## License
 
