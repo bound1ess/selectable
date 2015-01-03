@@ -1,0 +1,1 @@
+readarray -t OPTIONS < "%s"
