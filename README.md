@@ -37,7 +37,7 @@ Instructions on how to integrate Selectable in your project can be found when ru
 
 ## Examples
 
-Check out this `examples` [folder](https://github.com/bound1ess/selectable/tree/master/pieces) for examples of usage.
+Check out the examples [folder](https://github.com/bound1ess/selectable/tree/master/examples).
 
 ## License
 
