@@ -36,7 +36,16 @@ def ask_about_options
 end
 
 def ask_about_choice_processing
-    # TODO
+    print "Would you like to display the user's choice OR store it in a variable? [1st/2nd]: "
+    choice = STDIN.gets.chomp.strip[0]
+    if choice == "1"
+        return {:type => "show"}
+    else
+        print "Please enter the variable name: "
+        name = STDIN.gets.chomp.strip.upcase
+        print $/
+        return {:type => "store", :variable_name => name}
+    end
 end
 
 def build_selectable file_path, options, choice_processing
