@@ -1,3 +1,3 @@
-process-users-choice() {
-    %s="${OPTIONS[$CURRENT_INDEX]}" 
+selectable-process-users-choice() {
+    %s="${SELECTABLE_OPTIONS[$SELECTABLE_CURRENT_INDEX]}" 
 }

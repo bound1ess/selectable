@@ -1,1 +1,1 @@
-readarray -t OPTIONS < "%s"
+readarray -t SELECTABLE_OPTIONS < "%s"

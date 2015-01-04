@@ -1,8 +1,8 @@
-display-menu() {
+selectable-display-menu() {
     printf "\ec"
     local KEY=0
-    for OPTION in "${OPTIONS[@]}"; do
-        if [ $CURRENT_INDEX == $KEY ]; then
+    for OPTION in "${SELECTABLE_OPTIONS[@]}"; do
+        if [ $SELECTABLE_CURRENT_INDEX == $KEY ]; then
             echo "[x] $OPTION"
         else
             echo "[ ] $OPTION"

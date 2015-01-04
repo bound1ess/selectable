@@ -1,1 +1,1 @@
-OPTIONS=( %s )
+SELECTABLE_OPTIONS=( %s )
