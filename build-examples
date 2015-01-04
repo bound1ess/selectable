@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require_relative "lib/selectable"
+
+puts "Building examples..."
+
+build_selectable(
+    __dir__ + "/examples/predefined-options-and-choice-is-stored/selectable.sh",
+    {:type => "predefined", :list => ["Predefined option", "Another one", "One more"]},
+    {:type => "store", :variable_name => "users_choice"}
+)
+
+build_selectable(
+    __dir__ + "/examples/stored-options-and-choice-is-displayed/selectable.sh",
+    {:type => "stored", :path => __dir__ + "/options-list.example"},
+    {:type => "show"}
+)
+
+puts "Done, check out the examples directory."
+
+# vim: syntax=ruby
