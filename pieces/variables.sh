@@ -1,4 +1,5 @@
 ARROW_UP=$'\e[A'
+ARROW_DOWN=$'\e[B'
 ARROW_RIGHT=$'\e[C'
 ARROW_LEFT=$'\e[D'
 OPTIONS_AMOUNT=${#OPTIONS[@]}
