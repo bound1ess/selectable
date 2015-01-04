@@ -7,7 +7,7 @@ puts "Building examples..."
 build_selectable(
     __dir__ + "/examples/predefined-options-and-choice-is-stored/selectable.sh",
     {:type => "predefined", :list => ["Predefined option", "Another one", "One more"]},
-    {:type => "store", :variable_name => "users_choice"}
+    {:type => "store", :variable_name => "users_choice".upcase}
 )
 
 build_selectable(
