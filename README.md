@@ -37,7 +37,11 @@ Instructions on how to integrate Selectable in your project can be found when ru
 
 ## Examples
 
-Check out the examples [folder](https://github.com/bound1ess/selectable/tree/master/examples).
+```shell
+# First of all, clone the repository and "cd" into it as was shown above.
+./build-examples && cd examples; ls
+./<what you chose>/selectable.sh
+```
 
 ## License
 
