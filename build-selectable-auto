@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+
+require_relative "lib/selectable"
+
+file_path, load_from, result_variable = nil, nil, nil
+
+options = OptionParser.new do |parser|
+    parser.banner = "Usage: ./build-selectable-auto [options]"
+
+    parser.on("--to=PATH") do |path|
+        file_path = path
+    end
+
+    parser.on("--from=PATH") do |from|
+        load_from = from
+    end
+
+    parser.on("--save=VARIABLE") do |variable|
+        result_variable = variable
+    end
+
+    parser.on("--help") do
+        puts parser
+        exit
+    end
+end
+
+begin
+    ARGV << "--help" unless ARGV.size == 3
+    options.parse!(ARGV)
+rescue OptionParser::ParseError
+    $stderr.print("Error: " + $! + $/)
+    exit
+end
+
+puts file_path, load_from, result_variable
