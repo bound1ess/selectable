@@ -28,10 +28,10 @@ options = OptionParser.new do |parser|
 end
 
 begin
-    ARGV << "--help" unless ARGV.size == 3
+    ARGV << "--help" if ARGV.empty?
     options.parse!(ARGV)
 rescue OptionParser::ParseError
-    $stderr.print("Error: " + $! + $/)
+    $stderr.puts($!.to_s)
     exit
 end
 
