@@ -35,6 +35,9 @@ then confirm it by pressing either `Arrow Left` or `Arrow Right`.
 Instructions on how to integrate Selectable in your project can be found when running 
 `build-selectable` binary.
 
+You can also use `build-selectable-auto` if you don't want to interact with the program. 
+Check out `examples/auto.sh`.
+
 ## Examples
 
 ```shell
