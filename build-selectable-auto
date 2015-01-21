@@ -35,4 +35,20 @@ rescue OptionParser::ParseError
     exit
 end
 
-puts file_path, load_from, result_variable
+file_path += "/selectable.sh"
+
+puts "Saving into #{file_path}"
+puts "Options will be loaded from #{load_from}"
+puts "User's choice will be stored in $#{result_variable.upcase}"
+
+build_selectable(
+    file_path,
+    {
+        :type => "stored",
+        :path => load_from,
+    },
+    {
+        :type => "store",
+        :variable_name => result_variable.upcase,
+    }
+)
